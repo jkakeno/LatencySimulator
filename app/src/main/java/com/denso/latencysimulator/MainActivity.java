@@ -2,6 +2,7 @@ package com.denso.latencysimulator;
 
 import android.annotation.SuppressLint;
 import android.os.Message;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,11 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.os.Handler;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements InteractionListener{
+
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String ROOT = "root";
+    private static final String SETTING_FRAGMENT = "setting_fragment";
 
     final int MSG_START_TIMER = 0;
     final int MSG_STOP_TIMER = 1;
@@ -44,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     Stopwatch timer = new Stopwatch();
     Handler mHandler;
+    FragmentManager fragmentManager;
+    Settings settings;
 
     long elapseTime;
     boolean isLocked;
@@ -53,26 +60,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG,"onCreate");
         setContentView(R.layout.activity_main);
 
+        fragmentManager = getSupportFragmentManager();
 
+        settings = new Settings();
 
         ignition = findViewById(R.id.ig_btn);
         unlock = findViewById(R.id.unlock_btn);
         lock = findViewById(R.id.lock_btn);
         remoteCmd = findViewById(R.id.remote_cmd);
         postCmd = findViewById(R.id.post_cmd);
-        postAck = findViewById(R.id.post_ack);
+//        postAck = findViewById(R.id.post_ack);
         specD = findViewById(R.id.spec_d);
         sms = findViewById(R.id.sms);
-        smsAck1 = findViewById(R.id.sms_ack1);
-        smsAck2 = findViewById(R.id.sms_ack2);
+//        smsAck1 = findViewById(R.id.sms_ack1);
+//        smsAck2 = findViewById(R.id.sms_ack2);
         accessTSC = findViewById(R.id.access_to_tsc);
         downloadCmd = findViewById(R.id.download_cmd);
         uploadResult = findViewById(R.id.upload_result);
-        callbackPhase1 = findViewById(R.id.callback_phase1);
-        callbackPhase2 = findViewById(R.id.callback_phase2);
-        callbackPhase3 = findViewById(R.id.callback_phase3);
+//        callbackPhase1 = findViewById(R.id.callback_phase1);
+//        callbackPhase2 = findViewById(R.id.callback_phase2);
+//        callbackPhase3 = findViewById(R.id.callback_phase3);
         callbackPhase4 = findViewById(R.id.callback_phase4);
         remoteCmdResponse = findViewById(R.id.remote_cmd_res);
         statusMsg = findViewById(R.id.status);
@@ -140,18 +150,18 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("Time: ", String.valueOf(timer.getElapsedTime()));
                         elapseTime = timer.getElapsedTime();
 
-                        remoteCmd(0,1000);
+                        remoteCmd(settings.getRemoteCmdStart());
                         postCmd(1000,1500);
-                        postAck(2000,2500);
+//                        postAck(2000,2500);
                         specD(4500,5000);
-                        callbackPhase1(4500,5000);
+//                        callbackPhase1(4500,5000);
                         sms(10000,15000);
-                        smsAck1(15000,17000);
-                        smsAck2(17000,17500);
-                        callbackPhase2(17500,18000);
+//                        smsAck1(15000,17000);
+//                        smsAck2(17000,17500);
+//                        callbackPhase2(17500,18000);
                         accessTSC(21000,22000);
                         downloadCmd(22000,25000);
-                        callbackPhase3(26000,26500);
+//                        callbackPhase3(26000,26500);
                         uploadResult(32000,33000);
                         callbackPhase4(36000,37000);
                         remoteCmdResponse(37000,38000);
@@ -206,23 +216,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void remoteCmd(long start, long end) {
-        if(start < elapseTime && elapseTime < end) {
+    public void remoteCmd(long start) {
+        if(start < elapseTime) {
             remoteCmd.setBackgroundResource(R.drawable.arrow_right_on);
         }
     }
 
-    public void postCmd(long start, long end){
-        if(start < elapseTime && elapseTime < end) {
+    public void postCmd(long start, long wait){
+        if(start + wait < elapseTime) {
             postCmd.setBackgroundResource(R.drawable.arrow_right_on);
         }
     }
 
-    public void postAck(long start, long end) {
-        if(start< elapseTime && elapseTime <end) {
-            postAck.setBackgroundResource(R.drawable.arrow_left_on);
-        }
-    }
+//    public void postAck(long start, long end) {
+//        if(start< elapseTime && elapseTime <end) {
+//            postAck.setBackgroundResource(R.drawable.arrow_left_on);
+//        }
+//    }
 
     public void specD(long start, long end) {
         if(start< elapseTime && elapseTime <end) {
@@ -230,12 +240,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void callbackPhase1(long start, long end) {
-        if(start< elapseTime && elapseTime <end) {
-            callbackPhase1.setBackgroundResource(R.drawable.arrow_left_on);
-            statusMsg.setText("Contacting Vehicle");
-        }
-    }
+//    public void callbackPhase1(long start, long end) {
+//        if(start< elapseTime && elapseTime <end) {
+//            callbackPhase1.setBackgroundResource(R.drawable.arrow_left_on);
+//            statusMsg.setText("Contacting Vehicle");
+//        }
+//    }
 
     public void sms(long start, long end) {
         if(start< elapseTime && elapseTime <end) {
@@ -243,24 +253,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void smsAck1(long start, long end) {
-        if(start< elapseTime && elapseTime <end) {
-            smsAck1.setBackgroundResource(R.drawable.arrow_left_on);
-        }
-    }
+//    public void smsAck1(long start, long end) {
+//        if(start< elapseTime && elapseTime <end) {
+//            smsAck1.setBackgroundResource(R.drawable.arrow_left_on);
+//        }
+//    }
+//
+//    public void smsAck2(long start, long end) {
+//        if(start< elapseTime && elapseTime <end) {
+//            smsAck2.setBackgroundResource(R.drawable.arrow_left_on);
+//        }
+//    }
 
-    public void smsAck2(long start, long end) {
-        if(start< elapseTime && elapseTime <end) {
-            smsAck2.setBackgroundResource(R.drawable.arrow_left_on);
-        }
-    }
-
-    public void callbackPhase2(long start, long end) {
-        if(start< elapseTime && elapseTime <end) {
-            callbackPhase2.setBackgroundResource(R.drawable.arrow_left_on);
-            statusMsg.setText("Sending Request");
-        }
-    }
+//    public void callbackPhase2(long start, long end) {
+//        if(start< elapseTime && elapseTime <end) {
+//            callbackPhase2.setBackgroundResource(R.drawable.arrow_left_on);
+//            statusMsg.setText("Sending Request");
+//        }
+//    }
 
     public void accessTSC(long start, long end) {
         if(start< elapseTime && elapseTime <end) {
@@ -274,12 +284,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void callbackPhase3(long start, long end) {
-        if(start< elapseTime && elapseTime <end) {
-            callbackPhase3.setBackgroundResource(R.drawable.arrow_left_on);
-            statusMsg.setText("Processing Request");
-        }
-    }
+//    public void callbackPhase3(long start, long end) {
+//        if(start< elapseTime && elapseTime <end) {
+//            callbackPhase3.setBackgroundResource(R.drawable.arrow_left_on);
+//            statusMsg.setText("Processing Request");
+//        }
+//    }
 
     public void uploadResult(long start, long end) {
         if(start< elapseTime && elapseTime <end) {
@@ -303,16 +313,16 @@ public class MainActivity extends AppCompatActivity {
     public void resetDrawables() {
         remoteCmd.setBackgroundResource(R.drawable.arrow_right_off);
         postCmd.setBackgroundResource(R.drawable.arrow_right_off);
-        postAck.setBackgroundResource(R.drawable.arrow_left_off);
+//        postAck.setBackgroundResource(R.drawable.arrow_left_off);
         specD.setBackgroundResource(R.drawable.arrow_right_off);
-        callbackPhase1.setBackgroundResource(R.drawable.arrow_left_off);
+//        callbackPhase1.setBackgroundResource(R.drawable.arrow_left_off);
         sms.setBackgroundResource(R.drawable.arrow_right_off);
-        smsAck1.setBackgroundResource(R.drawable.arrow_left_off);
-        smsAck2.setBackgroundResource(R.drawable.arrow_left_off);
-        callbackPhase2.setBackgroundResource(R.drawable.arrow_left_off);
+//        smsAck1.setBackgroundResource(R.drawable.arrow_left_off);
+//        smsAck2.setBackgroundResource(R.drawable.arrow_left_off);
+//        callbackPhase2.setBackgroundResource(R.drawable.arrow_left_off);
         accessTSC.setBackgroundResource(R.drawable.arrow_left_off);
         downloadCmd.setBackgroundResource(R.drawable.arrow_right_off);
-        callbackPhase3.setBackgroundResource(R.drawable.arrow_left_off);
+//        callbackPhase3.setBackgroundResource(R.drawable.arrow_left_off);
         uploadResult.setBackgroundResource(R.drawable.arrow_left_off);
         callbackPhase4.setBackgroundResource(R.drawable.arrow_left_off);
         remoteCmdResponse.setBackgroundResource(R.drawable.arrow_left_off);
@@ -328,10 +338,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(item.getItemId() == R.id.settings){
+        if (item.getItemId() == R.id.settings){
             Log.d("Menu selected is: ", "Settings");
+
+            SettingFragment settingFragment = SettingFragment.newInstance(settings);
+            fragmentManager.beginTransaction().add(R.id.root,settingFragment,SETTING_FRAGMENT).addToBackStack(ROOT).commit();
+
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSettingsChangeInteraction(Settings settings) {
+        Log.d(TAG,"onSettingsChangeInteraction");
+        fragmentManager.popBackStackImmediate();
     }
 }

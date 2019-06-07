@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/sequence"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/ctp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CTP"
+            android:textSize="10sp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="70dp"/>
+        <View
+            android:id="@+id/ctp_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
+            android:layout_marginStart="80dp"
+            android:layout_below="@+id/ctp_label"/>
+
+
+        <TextView
+            android:id="@+id/tsc_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TSC"
+            android:textSize="10sp"
+            android:textColor="@color/colorBlack"
+            android:layout_alignStart="@+id/ctp_label"
+            android:layout_marginStart="130dp"/>
+        <View
+            android:id="@+id/tsc_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
+            android:layout_marginStart="130dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_below="@+id/tsc_label"/>
+
+
+        <TextView
+            android:id="@+id/gcp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GCP"
+            android:textSize="10sp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="130dp"
+            android:layout_alignStart="@+id/tsc_label"/>
+        <View
+            android:id="@+id/gcp_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
+            android:layout_marginStart="130dp"
+            android:layout_below="@+id/tsc_label"
+            android:layout_alignStart="@+id/tsc_line"/>
+
+
+        <TextView
+            android:id="@+id/dcm_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DCM"
+            android:textSize="10sp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="130dp"
+            android:layout_alignStart="@+id/gcp_label"/>
+        <View
+            android:id="@+id/dcm_line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
+            android:layout_marginStart="130dp"
+            android:layout_below="@+id/tsc_label"
+            android:layout_alignStart="@+id/gcp_line"/>
+
+
+        <EditText
+            android:id="@+id/remote_cmd_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_below="@+id/remote_cmd"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/remote_cmd"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignEnd="@+id/ctp_line"
+            android:background="@drawable/arrow_right_off"
+            android:layout_marginTop="20dp"/>
+
+
+        <ImageView
+            android:id="@+id/post_cmd_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer"
+            android:layout_below="@+id/remote_cmd"
+            android:layout_alignEnd="@+id/ctp_line"/>
+        <EditText
+            android:id="@+id/post_cmd_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/post_cmd_wait_pointer"
+            android:layout_alignStart="@+id/post_cmd_wait_pointer"/>
+
+
+        <EditText
+            android:id="@+id/post_cmd_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_below="@+id/remote_cmd"
+            android:layout_alignStart="@+id/ctp_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/post_cmd"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_alignEnd="@+id/tsc_line"
+            android:layout_below="@+id/post_cmd_et"
+            android:background="@drawable/arrow_right_off" />
+        <TextView
+            android:id="@+id/post_cmd_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POST Cmd"
+            android:textSize="8sp"
+            android:layout_below="@+id/post_cmd"
+            android:layout_marginStart="60dp"
+            android:layout_alignStart="@+id/ctp_line"/>
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/post_ack_et"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="190dp"-->
+            <!--android:layout_below="@+id/post_ack"-->
+            <!--android:textSize="8sp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/post_ack"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_alignStart="@+id/ctp_line"-->
+            <!--android:layout_alignEnd="@+id/tsc_line"-->
+            <!--android:layout_below="@+id/post_ack_label"-->
+            <!--android:background="@drawable/arrow_left_off" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/post_ack_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="POST Ack"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/post_cmd_label"-->
+            <!--android:layout_marginStart="190dp"/>-->
+
+
+        <ImageView
+            android:id="@+id/spec_d_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer"
+            android:layout_below="@+id/post_cmd"
+            android:layout_alignEnd="@+id/tsc_line"/>
+        <EditText
+            android:id="@+id/spec_d_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/spec_d_wait_pointer"
+            android:layout_alignStart="@+id/spec_d_wait_pointer"/>
+
+
+        <EditText
+            android:id="@+id/spec_d_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="60dp"
+            android:layout_below="@+id/post_cmd"
+            android:layout_alignStart="@+id/tsc_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/spec_d"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/tsc_line"
+            android:layout_alignEnd="@+id/gcp_line"
+            android:layout_below="@+id/spec_d_et"
+            android:background="@drawable/arrow_right_off" />
+        <TextView
+            android:id="@+id/spec_d_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spec D"
+            android:textSize="8sp"
+            android:layout_below="@+id/spec_d"
+            android:layout_marginStart="60dp"
+            android:layout_alignStart="@+id/tsc_line"/>
+
+
+        <ImageView
+            android:id="@+id/sms_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer"
+            android:layout_below="@+id/spec_d"
+            android:layout_alignEnd="@+id/gcp_line"/>
+        <EditText
+            android:id="@+id/sms_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/sms_wait_pointer"
+            android:layout_alignStart="@+id/sms_wait_pointer"/>
+
+
+        <EditText
+            android:id="@+id/sms_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_below="@+id/spec_d"
+            android:layout_alignStart="@+id/gcp_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/sms"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/gcp_line"
+            android:layout_alignEnd="@+id/dcm_line"
+            android:layout_below="@+id/sms_et"
+            android:background="@drawable/arrow_right_off" />
+        <TextView
+            android:id="@+id/sms_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMS"
+            android:textSize="8sp"
+            android:layout_below="@+id/sms"
+            android:layout_marginStart="40dp"
+            android:layout_alignStart="@+id/gcp_line"/>
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/sms_ack1_et"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_marginStart="490dp"-->
+            <!--android:layout_below="@+id/sms_ack1"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/sms_ack1"-->
+            <!--android:layout_width="120dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_alignStart="@+id/gcp_line"-->
+            <!--android:layout_alignEnd="@+id/dcm_line"-->
+            <!--android:layout_below="@+id/sms_ack1_label"-->
+            <!--android:background="@drawable/arrow_left_off" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/sms_ack1_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="SMS Ack"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/sms_label"-->
+            <!--android:layout_marginStart="490dp"/>-->
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/sms_ack2_et"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_marginStart="330dp"-->
+            <!--android:layout_below="@+id/spec_d"-->
+            <!--android:layout_marginTop="20dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/sms_ack2"-->
+            <!--android:layout_width="120dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_alignStart="@+id/tsc_line"-->
+            <!--android:layout_alignEnd="@+id/gcp_line"-->
+            <!--android:layout_below="@id/sms_ack2_et"-->
+            <!--android:background="@drawable/arrow_left_off" />-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="SMS Ack"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/sms_ack2"-->
+            <!--android:layout_marginStart="330dp"/>-->
+
+        <ImageView
+            android:id="@+id/access_to_tsc_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer_reverse"
+            android:layout_below="@+id/sms"
+            android:layout_alignStart="@+id/dcm_line"/>
+        <EditText
+            android:id="@+id/access_to_tsc_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/access_to_tsc_wait_pointer"
+            android:layout_alignStart="@+id/access_to_tsc_wait_pointer"
+            android:layout_marginStart="30dp"/>
+
+
+        <EditText
+            android:id="@+id/access_to_tsc_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="80dp"
+            android:layout_below="@+id/sms"
+            android:layout_alignStart="@+id/gcp_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/access_to_tsc"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/tsc_line"
+            android:layout_alignEnd="@+id/dcm_line"
+            android:layout_below="@+id/access_to_tsc_et"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/access_to_tsc_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TSC Access"
+            android:textSize="8sp"
+            android:layout_below="@+id/access_to_tsc"
+            android:layout_marginStart="60dp"
+            android:layout_alignStart="@+id/gcp_line"/>
+
+
+        <ImageView
+            android:id="@+id/download_cmd_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer"
+            android:layout_below="@+id/access_to_tsc"
+            android:layout_alignEnd="@+id/tsc_line"/>
+        <EditText
+            android:id="@+id/download_cmd_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/download_cmd_wait_pointer"
+            android:layout_alignStart="@+id/download_cmd_wait_pointer"/>
+
+
+        <EditText
+            android:id="@+id/download_cmd_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="60dp"
+            android:layout_below="@id/access_to_tsc"
+            android:layout_alignStart="@+id/tsc_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/download_cmd"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/tsc_line"
+            android:layout_alignEnd="@+id/dcm_line"
+            android:layout_below="@+id/download_cmd_et"
+            android:background="@drawable/arrow_right_off" />
+        <TextView
+            android:id="@+id/download_cmd_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download Cmd"
+            android:textSize="8sp"
+            android:layout_below="@+id/download_cmd"
+            android:layout_marginStart="60dp"
+            android:layout_alignStart="@+id/tsc_line"/>
+
+
+        <ImageView
+            android:id="@+id/upload_result_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer_reverse"
+            android:layout_below="@+id/download_cmd"
+            android:layout_alignStart="@+id/dcm_line"/>
+        <EditText
+            android:id="@+id/upload_result_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/upload_result_wait_pointer"
+            android:layout_alignStart="@+id/upload_result_wait_pointer"
+            android:layout_marginStart="30dp"/>
+
+
+        <EditText
+            android:id="@+id/upload_result_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="80dp"
+            android:layout_below="@+id/download_cmd"
+            android:layout_alignStart="@+id/gcp_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/upload_result"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/tsc_line"
+            android:layout_alignEnd="@+id/dcm_line"
+            android:layout_below="@+id/upload_result_et"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Result"
+            android:textSize="8sp"
+            android:layout_below="@+id/upload_result"
+            android:layout_marginStart="80dp"
+            android:layout_alignStart="@+id/gcp_line"/>
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/callback_phase1_et"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_marginStart="150dp"-->
+            <!--android:layout_below="@+id/post_ack"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/callback_phase1"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_alignStart="@+id/ctp_line"-->
+            <!--android:layout_alignEnd="@+id/tsc_line"-->
+            <!--android:layout_below="@+id/callback_phase1_et"-->
+            <!--android:background="@drawable/arrow_left_off" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/callback_phase1_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Callback1"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/callback_phase1"-->
+            <!--android:layout_marginStart="150dp"/>-->
+        <!---->
+        <!---->
+        <!--<TextView-->
+            <!--android:id="@+id/callback_phase2_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Callback2"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/callback_phase2"-->
+            <!--android:layout_marginStart="120dp"/>-->
+        <!--<EditText-->
+            <!--android:id="@+id/callback_phase2_et"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_marginStart="120dp"-->
+            <!--android:layout_below="@+id/callback_phase1"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/callback_phase2"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_alignStart="@+id/ctp_line"-->
+            <!--android:layout_alignEnd="@+id/tsc_line"-->
+            <!--android:layout_below="@+id/callback_phase2_et"-->
+            <!--android:background="@drawable/arrow_left_off" />-->
+        <!---->
+
+        <!--<EditText-->
+            <!--android:id="@+id/callback_phase3_et"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/callback_phase2"-->
+            <!--android:layout_marginStart="180dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/callback_phase3"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_alignStart="@+id/ctp_line"-->
+            <!--android:layout_alignEnd="@+id/tsc_line"-->
+            <!--android:layout_below="@+id/callback_phase3_et"-->
+            <!--android:background="@drawable/arrow_left_off" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/callback_phase3_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Callback3"-->
+            <!--android:textSize="8sp"-->
+            <!--android:layout_below="@+id/callback_phase3"-->
+            <!--android:layout_marginStart="180dp"/>-->
+
+
+        <ImageView
+            android:id="@+id/callback_phase4_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer_reverse"
+            android:layout_below="@+id/upload_result"
+            android:layout_alignStart="@+id/tsc_line"/>
+        <EditText
+            android:id="@+id/callback_phase4_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_below="@id/callback_phase4_wait_pointer"
+            android:layout_alignStart="@+id/callback_phase4_wait_pointer"
+            android:layout_marginStart="30dp"/>
+
+
+        <EditText
+            android:id="@+id/callback_phase4_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="60dp"
+            android:layout_below="@+id/upload_result"
+            android:layout_alignStart="@+id/ctp_line"
+            android:inputType="number"/>
+        <ImageView
+            android:id="@+id/callback_phase4"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_alignEnd="@+id/tsc_line"
+            android:layout_below="@+id/callback_phase4_et"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/callback_phase4_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Callback4"
+            android:textSize="8sp"
+            android:layout_below="@+id/callback_phase4"
+            android:layout_marginStart="60dp"
+            android:layout_alignStart="@+id/ctp_line"/>
+
+
+        <ImageView
+            android:id="@+id/remote_cmd_res_wait_pointer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_pointer_reverse"
+            android:layout_above="@+id/remote_cmd_res"
+            android:layout_alignEnd="@+id/ctp_line"/>
+        <EditText
+            android:id="@+id/remote_cmd_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:inputType="number"
+            android:hint="Wait"
+            android:layout_above="@id/remote_cmd_res_wait_pointer"
+            android:layout_alignEnd="@+id/remote_cmd_res_wait_pointer"
+            android:layout_marginEnd="30dp"/>
+
+
+        <EditText
+            android:id="@+id/remote_cmd_res_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:padding="0dp"
+            android:layout_marginStart="10dp"
+            android:inputType="number"
+            android:layout_below="@+id/callback_phase4"/>
+        <ImageView
+            android:id="@+id/remote_cmd_res"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignEnd="@+id/ctp_line"
+            android:layout_below="@+id/remote_cmd_res_et"
+            android:background="@drawable/arrow_left_off" />
+
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/ok_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"/>
+
+</RelativeLayout>
