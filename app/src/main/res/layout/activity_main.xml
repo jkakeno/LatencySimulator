@@ -24,7 +24,9 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="50dp"
+            android:textOff="Stop"
+            android:textOn="Start"/>
 
         <Button
             android:id="@+id/lock_btn"
@@ -69,304 +71,6 @@
 
     </RelativeLayout>
 
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/sequence"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_weight="3"-->
-        <!--android:layout_height="300dp"-->
-        <!--android:layout_gravity="center_vertical"-->
-        <!--android:paddingTop="5dp"-->
-        <!--android:paddingBottom="10dp">-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/ctp_label"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="CTP"-->
-            <!--android:textSize="10sp"-->
-            <!--android:textColor="@color/colorBlack"-->
-            <!--android:layout_marginStart="40dp"/>-->
-        <!--<View-->
-            <!--android:id="@+id/ctp_line"-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@color/colorGray"-->
-            <!--android:layout_marginStart="50dp"-->
-            <!--android:layout_below="@+id/ctp_label"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/tsc_label"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="TSC"-->
-            <!--android:textSize="10sp"-->
-            <!--android:textColor="@color/colorBlack"-->
-            <!--android:layout_marginStart="160dp"/>-->
-        <!--<View-->
-            <!--android:id="@+id/tsc_line"-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@color/colorGray"-->
-            <!--android:layout_marginStart="170dp"-->
-            <!--android:layout_below="@+id/tsc_label"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/gcp_label"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="GCP"-->
-            <!--android:textSize="10sp"-->
-            <!--android:textColor="@color/colorBlack"-->
-            <!--android:layout_marginStart="280dp"/>-->
-        <!--<View-->
-            <!--android:id="@+id/gcp_line"-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@color/colorGray"-->
-            <!--android:layout_marginStart="290dp"-->
-            <!--android:layout_below="@+id/tsc_label"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/dcm_label"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="DCM"-->
-            <!--android:textSize="10sp"-->
-            <!--android:textColor="@color/colorBlack"-->
-            <!--android:layout_marginStart="400dp"/>-->
-        <!--<View-->
-            <!--android:id="@+id/dcm_line"-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@color/colorGray"-->
-            <!--android:layout_marginStart="410dp"-->
-            <!--android:layout_below="@+id/tsc_label"/>-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/remote_cmd"-->
-            <!--android:layout_width="80dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_alignEnd="@+id/ctp_line"-->
-            <!--android:background="@drawable/arrow_right_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="POST Cmd"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/post_cmd"-->
-            <!--android:layout_marginStart="90dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/post_cmd"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/ctp_line"-->
-            <!--android:layout_alignEnd="@+id/tsc_line"-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:background="@drawable/arrow_right_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="POST Ack"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/post_ack"-->
-            <!--android:layout_marginStart="90dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/post_ack"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/ctp_line"-->
-            <!--android:layout_alignEnd="@+id/tsc_line"-->
-            <!--android:layout_marginTop="50dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Spec D"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/spec_d"-->
-            <!--android:layout_marginStart="220dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/spec_d"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/tsc_line"-->
-            <!--android:layout_alignEnd="@+id/gcp_line"-->
-            <!--android:layout_marginTop="70dp"-->
-            <!--android:background="@drawable/arrow_right_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="SMS"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/sms"-->
-            <!--android:layout_marginStart="340dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/sms"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/gcp_line"-->
-            <!--android:layout_alignEnd="@+id/dcm_line"-->
-            <!--android:layout_marginTop="90dp"-->
-            <!--android:background="@drawable/arrow_right_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="SMS Ack"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/sms_ack1"-->
-            <!--android:layout_marginStart="330dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/sms_ack1"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/gcp_line"-->
-            <!--android:layout_alignEnd="@+id/dcm_line"-->
-            <!--android:layout_marginTop="110dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="SMS Ack"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/sms_ack2"-->
-            <!--android:layout_marginStart="220dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/sms_ack2"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/tsc_line"-->
-            <!--android:layout_alignEnd="@+id/gcp_line"-->
-            <!--android:layout_marginTop="130dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="TSC Access"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/access_to_tsc"-->
-            <!--android:layout_marginStart="270dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/access_to_tsc"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/tsc_line"-->
-            <!--android:layout_alignEnd="@+id/dcm_line"-->
-            <!--android:layout_marginTop="170dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Download Cmd"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/download_cmd"-->
-            <!--android:layout_marginStart="270dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/download_cmd"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/tsc_line"-->
-            <!--android:layout_alignEnd="@+id/dcm_line"-->
-            <!--android:layout_marginTop="190dp"-->
-            <!--android:background="@drawable/arrow_right_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Upload Result"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/upload_result"-->
-            <!--android:layout_marginStart="270dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/upload_result"-->
-            <!--android:layout_width="120dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/tsc_line"-->
-            <!--android:layout_alignEnd="@+id/dcm_line"-->
-            <!--android:layout_marginTop="230dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Callback1"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/callback_phase1"-->
-            <!--android:layout_marginStart="90dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/callback_phase1"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/ctp_line"-->
-            <!--android:layout_alignEnd="@+id/tsc_line"-->
-            <!--android:layout_marginTop="90dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Callback2"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/callback_phase2"-->
-            <!--android:layout_marginStart="90dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/callback_phase2"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/ctp_line"-->
-            <!--android:layout_alignEnd="@+id/tsc_line"-->
-            <!--android:layout_marginTop="150dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Callback3"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/callback_phase3"-->
-            <!--android:layout_marginStart="90dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/callback_phase3"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/ctp_line"-->
-            <!--android:layout_alignEnd="@+id/tsc_line"-->
-            <!--android:layout_marginTop="210dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Callback4"-->
-            <!--android:textSize="8sp"-->
-            <!--android:layout_below="@+id/callback_phase4"-->
-            <!--android:layout_marginStart="90dp"/>-->
-        <!--<ImageView-->
-            <!--android:id="@+id/callback_phase4"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignStart="@+id/ctp_line"-->
-            <!--android:layout_alignEnd="@+id/tsc_line"-->
-            <!--android:layout_marginTop="250dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/remote_cmd_res"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="10dp"-->
-            <!--android:layout_alignEnd="@+id/ctp_line"-->
-            <!--android:layout_marginTop="270dp"-->
-            <!--android:background="@drawable/arrow_left_off" />-->
-
-    <!--</RelativeLayout>-->
 
 
     <RelativeLayout
@@ -461,6 +165,13 @@
             android:layout_alignEnd="@+id/ctp_line"
             android:background="@drawable/arrow_right_off"
             android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/remote_cmd_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RemCmd"
+            android:textSize="8sp"
+            android:layout_below="@+id/remote_cmd"/>
 
 
         <ImageView
@@ -470,7 +181,6 @@
             android:layout_alignStart="@+id/ctp_line"
             android:layout_alignEnd="@+id/tsc_line"
             android:layout_below="@+id/remote_cmd"
-            android:layout_marginTop="15dp"
             android:background="@drawable/arrow_right_off" />
         <TextView
             android:id="@+id/post_cmd_label"
@@ -483,29 +193,24 @@
             android:layout_alignStart="@+id/ctp_line"/>
 
 
-        <!--<EditText-->
-        <!--android:id="@+id/post_ack_et"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="190dp"-->
-        <!--android:layout_below="@+id/post_ack"-->
-        <!--android:textSize="8sp"/>-->
-        <!--<ImageView-->
-        <!--android:id="@+id/post_ack"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_alignStart="@+id/ctp_line"-->
-        <!--android:layout_alignEnd="@+id/tsc_line"-->
-        <!--android:layout_below="@+id/post_ack_label"-->
-        <!--android:background="@drawable/arrow_left_off" />-->
-        <!--<TextView-->
-        <!--android:id="@+id/post_ack_label"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="POST Ack"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/post_cmd_label"-->
-        <!--android:layout_marginStart="190dp"/>-->
+
+        <ImageView
+            android:id="@+id/post_ack"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_alignEnd="@+id/tsc_line"
+            android:layout_below="@+id/post_cmd_label"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/post_ack_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POST Ack"
+            android:textSize="8sp"
+            android:layout_below="@+id/post_ack"
+            android:layout_marginStart="30dp"
+            android:layout_alignStart="@+id/ctp_line"/>
 
 
 
@@ -515,8 +220,7 @@
             android:layout_height="10dp"
             android:layout_alignStart="@+id/tsc_line"
             android:layout_alignEnd="@+id/gcp_line"
-            android:layout_below="@+id/post_cmd"
-            android:layout_marginTop="15dp"
+            android:layout_below="@+id/post_ack"
             android:background="@drawable/arrow_right_off" />
         <TextView
             android:id="@+id/spec_d_label"
@@ -536,7 +240,6 @@
             android:layout_alignStart="@+id/gcp_line"
             android:layout_alignEnd="@+id/dcm_line"
             android:layout_below="@+id/spec_d"
-            android:layout_marginTop="15dp"
             android:background="@drawable/arrow_right_off" />
         <TextView
             android:id="@+id/sms_label"
@@ -549,54 +252,40 @@
             android:layout_alignStart="@+id/gcp_line"/>
 
 
-        <!--<EditText-->
-        <!--android:id="@+id/sms_ack1_et"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_marginStart="490dp"-->
-        <!--android:layout_below="@+id/sms_ack1"/>-->
-        <!--<ImageView-->
-        <!--android:id="@+id/sms_ack1"-->
-        <!--android:layout_width="120dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_alignStart="@+id/gcp_line"-->
-        <!--android:layout_alignEnd="@+id/dcm_line"-->
-        <!--android:layout_below="@+id/sms_ack1_label"-->
-        <!--android:background="@drawable/arrow_left_off" />-->
-        <!--<TextView-->
-        <!--android:id="@+id/sms_ack1_label"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="SMS Ack"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/sms_label"-->
-        <!--android:layout_marginStart="490dp"/>-->
+        <ImageView
+            android:id="@+id/sms_ack1"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/gcp_line"
+            android:layout_alignEnd="@+id/dcm_line"
+            android:layout_below="@+id/sms_label"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMS Ack1"
+            android:textSize="8sp"
+            android:layout_below="@+id/sms_ack1"
+            android:layout_marginStart="30dp"
+            android:layout_alignStart="@+id/gcp_line"/>
 
 
-        <!--<EditText-->
-        <!--android:id="@+id/sms_ack2_et"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_marginStart="330dp"-->
-        <!--android:layout_below="@+id/spec_d"-->
-        <!--android:layout_marginTop="20dp"/>-->
-        <!--<ImageView-->
-        <!--android:id="@+id/sms_ack2"-->
-        <!--android:layout_width="120dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_alignStart="@+id/tsc_line"-->
-        <!--android:layout_alignEnd="@+id/gcp_line"-->
-        <!--android:layout_below="@id/sms_ack2_et"-->
-        <!--android:background="@drawable/arrow_left_off" />-->
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="SMS Ack"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/sms_ack2"-->
-        <!--android:layout_marginStart="330dp"/>-->
+        <ImageView
+            android:id="@+id/sms_ack2"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/tsc_line"
+            android:layout_alignEnd="@+id/gcp_line"
+            android:layout_below="@id/sms_ack1"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMS Ack2"
+            android:textSize="8sp"
+            android:layout_below="@+id/sms_ack2"
+            android:layout_marginStart="30dp"
+            android:layout_alignStart="@+id/tsc_line"/>
 
 
 
@@ -606,7 +295,7 @@
             android:layout_height="10dp"
             android:layout_alignStart="@+id/tsc_line"
             android:layout_alignEnd="@+id/dcm_line"
-            android:layout_below="@+id/sms"
+            android:layout_below="@+id/sms_ack2"
             android:layout_marginTop="15dp"
             android:background="@drawable/arrow_left_off" />
         <TextView
@@ -660,79 +349,62 @@
             android:layout_alignStart="@+id/tsc_line"/>
 
 
-        <!--<EditText-->
-        <!--android:id="@+id/callback_phase1_et"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_marginStart="150dp"-->
-        <!--android:layout_below="@+id/post_ack"/>-->
-        <!--<ImageView-->
-        <!--android:id="@+id/callback_phase1"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_alignStart="@+id/ctp_line"-->
-        <!--android:layout_alignEnd="@+id/tsc_line"-->
-        <!--android:layout_below="@+id/callback_phase1_et"-->
-        <!--android:background="@drawable/arrow_left_off" />-->
-        <!--<TextView-->
-        <!--android:id="@+id/callback_phase1_label"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Callback1"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/callback_phase1"-->
-        <!--android:layout_marginStart="150dp"/>-->
-        <!---->
-        <!---->
-        <!--<TextView-->
-        <!--android:id="@+id/callback_phase2_label"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Callback2"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/callback_phase2"-->
-        <!--android:layout_marginStart="120dp"/>-->
-        <!--<EditText-->
-        <!--android:id="@+id/callback_phase2_et"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_marginStart="120dp"-->
-        <!--android:layout_below="@+id/callback_phase1"/>-->
-        <!--<ImageView-->
-        <!--android:id="@+id/callback_phase2"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_alignStart="@+id/ctp_line"-->
-        <!--android:layout_alignEnd="@+id/tsc_line"-->
-        <!--android:layout_below="@+id/callback_phase2_et"-->
-        <!--android:background="@drawable/arrow_left_off" />-->
-        <!---->
 
-        <!--<EditText-->
-        <!--android:id="@+id/callback_phase3_et"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/callback_phase2"-->
-        <!--android:layout_marginStart="180dp"/>-->
-        <!--<ImageView-->
-        <!--android:id="@+id/callback_phase3"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_alignStart="@+id/ctp_line"-->
-        <!--android:layout_alignEnd="@+id/tsc_line"-->
-        <!--android:layout_below="@+id/callback_phase3_et"-->
-        <!--android:background="@drawable/arrow_left_off" />-->
-        <!--<TextView-->
-        <!--android:id="@+id/callback_phase3_label"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Callback3"-->
-        <!--android:textSize="8sp"-->
-        <!--android:layout_below="@+id/callback_phase3"-->
-        <!--android:layout_marginStart="180dp"/>-->
+        <ImageView
+            android:id="@+id/callback_phase1"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_alignEnd="@+id/tsc_line"
+            android:layout_below="@+id/post_ack_label"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/callback_phase1_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Callback1"
+            android:textSize="8sp"
+            android:layout_below="@+id/callback_phase1"
+            android:layout_marginStart="30dp"
+            android:layout_alignStart="@+id/ctp_line"/>
+
+
+        <ImageView
+            android:id="@+id/callback_phase2"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_alignEnd="@+id/tsc_line"
+            android:layout_below="@+id/sms_ack2"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/callback_phase2_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Callback2"
+            android:textSize="8sp"
+            android:layout_below="@+id/callback_phase2"
+            android:layout_marginStart="30dp"
+            android:layout_alignStart="@+id/ctp_line"/>
+
+
+        <ImageView
+            android:id="@+id/callback_phase3"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_alignStart="@+id/ctp_line"
+            android:layout_alignEnd="@+id/tsc_line"
+            android:layout_below="@+id/download_cmd"
+            android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/callback_phase3_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Callback3"
+            android:textSize="8sp"
+            android:layout_below="@+id/callback_phase3"
+            android:layout_marginStart="30dp"
+            android:layout_alignStart="@+id/ctp_line"/>
 
 
         <ImageView
@@ -742,7 +414,6 @@
             android:layout_alignStart="@+id/ctp_line"
             android:layout_alignEnd="@+id/tsc_line"
             android:layout_below="@+id/upload_result"
-            android:layout_marginTop="15dp"
             android:background="@drawable/arrow_left_off" />
         <TextView
             android:id="@+id/callback_phase4_label"
@@ -762,8 +433,14 @@
             android:layout_height="10dp"
             android:layout_alignEnd="@+id/ctp_line"
             android:layout_below="@+id/callback_phase4"
-            android:layout_marginTop="15dp"
             android:background="@drawable/arrow_left_off" />
+        <TextView
+            android:id="@+id/remote_cmd_res_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RemCmd Res"
+            android:textSize="8sp"
+            android:layout_below="@+id/remote_cmd_res"/>
 
     </RelativeLayout>
 

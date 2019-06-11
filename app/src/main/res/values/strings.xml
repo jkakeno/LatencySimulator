@@ -2,7 +2,29 @@
     <string name="app_name">LatencySimulator</string>
     <string name="settings">settings</string>
     <string name="play">play</string>
+    <string name="setting_screen_title">Latency Settings</string>
+    <string name="setting_screen_default">17plus Actual Measurement</string>
+    <string name="setting_screen_save">SAVE</string>
+    <string name="setting_screen_cmd">Command</string>
+    <string name="setting_screen_wait">Wait</string>
+    <string name="setting_screen_duration">Duration</string>
+    <string name="engine_is_on">Engine is ON</string>
+    <string name="engine_is_off">Engine is OFF</string>
+    <string name="vehicle_locked">Vehicle Locked</string>
+    <string name="vehicle_unlocked">Vehicle Unlocked</string>
+    <string name="contacting_vehicle">Contacting Vehicle</string>
+    <string name="sending_request">Sending Request</string>
+    <string name="processing_request">Processing Request</string>
+    <string name="remote_cmd">Remote Cmd</string>
+    <string name="post_cmd">POST Cmd</string>
+    <string name="spec_d">Spec D</string>
+    <string name="sms">SMS</string>
+    <string name="access_tsc">Access TSC</string>
+    <string name="download_cmd">Download Cmd</string>
+    <string name="upload_result">Upload Result</string>
+    <string name="callback4">Callback4</string>
+    <string name="remote_cmd_res">Remote Cmd Res</string>
+    <string name="ignition">ignition</string>
+    <string name="door">door</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

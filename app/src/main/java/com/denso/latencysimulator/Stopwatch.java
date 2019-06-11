@@ -56,16 +56,5 @@ public class Stopwatch {
     }
 
 
-
-
-//    // sample usage
-//    public static void main(String[] args) {
-//        Stopwatch s = new Stopwatch();
-//        s.ignition();
-//        // code you want to time goes here
-//        s.stop();
-//        System.out.println("elapsed time in milliseconds: " + s.getElapsedTime());
-//    }
-
 }
 
