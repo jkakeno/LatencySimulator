@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
     ImageView callbackPhase4;
     ImageView remoteCmdResponse;
     TextView statusMsg;
+    TextView timeMsg;
 
     Stopwatch timer = new Stopwatch();
     Handler handler;
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
         callbackPhase4 = findViewById(R.id.callback_phase4);
         remoteCmdResponse = findViewById(R.id.remote_cmd_res);
         statusMsg = findViewById(R.id.status);
+        timeMsg = findViewById(R.id.time);
 
         ignition.toggle();
 
@@ -154,8 +156,9 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
                         break;
 
                     case MSG_UPDATE_TIMER:
-                        Log.d("Time: ", String.valueOf(timer.getElapsedTime()));
+                        Log.d("Time: ", String.valueOf(timer.getElapsedTimeSecs()));
                         elapseTime = timer.getElapsedTime();
+                        timeMsg.setText(String.valueOf(timer.getElapsedTimeSecs()) + " " + getResources().getString(R.string.sec_unit));
 
                         setSequence(settings);
 
@@ -165,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
                     case MSG_STOP_TIMER:
                         handler.removeMessages(MSG_UPDATE_TIMER);
                         timer.stop();
-                        Log.d("Time: ", String.valueOf(timer.getElapsedTime()));
                         ignition.setClickable(true);
                         unlock.setClickable(true);
                         lock.setClickable(true);
@@ -317,6 +319,7 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
 
 
     public void resetDrawables() {
+        timeMsg.setText("");
         remoteCmd.setBackgroundResource(R.drawable.arrow_right_off);
         postCmd.setBackgroundResource(R.drawable.arrow_right_off);
         postAck.setBackgroundResource(R.drawable.arrow_left_off);

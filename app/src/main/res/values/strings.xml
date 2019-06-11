@@ -26,5 +26,6 @@
     <string name="remote_cmd_res">Remote Cmd Res</string>
     <string name="ignition">ignition</string>
     <string name="door">door</string>
+    <string name="sec_unit">sec</string>
 
 </resources>
