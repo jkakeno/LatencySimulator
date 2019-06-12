@@ -23,6 +23,11 @@
         android:inputType="number"
         android:imeOptions="actionDone"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ms"/>
+
     <EditText
         android:id="@+id/duration"
         android:layout_width="0dp"
@@ -32,6 +37,11 @@
         android:gravity="end"
         android:inputType="number"
         android:imeOptions="actionDone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ms"/>
 
 </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.denso.latencysimulator;
+package com.denso.latencysimulator.Model;
 
 
 

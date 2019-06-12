@@ -1,4 +1,4 @@
-package com.denso.latencysimulator;
+package com.denso.latencysimulator.Controller;
 
 import android.annotation.SuppressLint;
 import android.os.Message;
@@ -15,6 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.os.Handler;
+
+import com.denso.latencysimulator.Interface.SettingSaveListener;
+import com.denso.latencysimulator.Model.SettingItem;
+import com.denso.latencysimulator.Model.Settings;
+import com.denso.latencysimulator.R;
+import com.denso.latencysimulator.Model.Stopwatch;
+import com.denso.latencysimulator.View.SettingFragment;
 
 import java.util.LinkedHashMap;
 
@@ -53,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
     Stopwatch timer = new Stopwatch();
     Handler handler;
     FragmentManager fragmentManager;
-    LinkedHashMap<String,SettingItem> settings;
+    LinkedHashMap<String, SettingItem> settings;
 
     long elapseTime;
     boolean isLocked;
@@ -214,23 +221,21 @@ public class MainActivity extends AppCompatActivity implements SettingSaveListen
         //Default values
         long postAckWait = 0;
         long smsAck1Wait = 0;
-        long smsAck1Duration = 0;
         long smsAck2Wait = 0;
-        long smsAck2Duration = 0;
         long callback1Wait = 0;
         long callback2Wait = 0;
         long callback3Wait = 0;
 
         long remoteCmdStart = remoteCmdWait;
         long postCmdStart = remoteCmdStart + remoteCmdDuration + postCmdWait;
-        long postAckStart = postCmdStart + postCmdDuration + postAckWait;
+        long postAckStart = postCmdStart + postAckWait;
         long specDStart = postCmdStart + postCmdDuration + specDWait;
         long callback1Start = specDStart + callback1Wait;
         long smsStart = specDStart + specDDuration + smsWait;
-        long smsAck1Start = smsStart + smsDuration + smsAck1Wait;
-        long smsAck2Start = smsAck1Start + smsAck1Duration + smsAck2Wait;
-        long callback2Start = smsAck2Start + smsAck2Duration + callback2Wait;
-        long accessTSCStart = smsAck1Start + accessTSCWait;
+        long smsAck1Start = smsStart + smsAck1Wait;
+        long smsAck2Start = smsAck1Start + smsAck2Wait;
+        long callback2Start = smsAck2Start + callback2Wait;
+        long accessTSCStart = smsStart + smsDuration + accessTSCWait;
         long downloadCmdStart = accessTSCStart + accessTSCDuration + downloadCmdWait;
         long callback3Start = downloadCmdStart + callback3Wait;
         long uploadResultStart = downloadCmdStart + downloadCmdDuration + uploadResultWait;

@@ -1,4 +1,4 @@
-package com.denso.latencysimulator;
+package com.denso.latencysimulator.View;
 
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -9,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.denso.latencysimulator.Model.SettingItem;
+import com.denso.latencysimulator.R;
+import com.denso.latencysimulator.Interface.SettingEditListener;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -16,7 +20,7 @@ import java.util.LinkedHashMap;
 
 public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.ViewHolder> {
 
-    LinkedHashMap<String,SettingItem> settings;
+    LinkedHashMap<String, SettingItem> settings;
     SettingEditListener listener;
 
     public SettingAdapter(LinkedHashMap<String,SettingItem> settings, SettingEditListener listener) {

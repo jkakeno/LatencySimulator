@@ -1,4 +1,4 @@
-package com.denso.latencysimulator;
+package com.denso.latencysimulator.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,12 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.denso.latencysimulator.Model.SettingItem;
+import com.denso.latencysimulator.Model.Settings;
+import com.denso.latencysimulator.R;
+import com.denso.latencysimulator.Interface.SettingEditListener;
+import com.denso.latencysimulator.Interface.SettingSaveListener;
 
 import java.util.LinkedHashMap;
 
@@ -31,7 +37,7 @@ public class SettingFragment extends Fragment implements SettingEditListener {
 
     SettingSaveListener listener;
     SettingEditListener interfaceListener;
-    LinkedHashMap<String,SettingItem> settings;
+    LinkedHashMap<String, SettingItem> settings;
 
     public SettingFragment() {
         // Required empty public constructor
